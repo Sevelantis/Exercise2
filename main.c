@@ -38,11 +38,11 @@ char* findDate(double julianDateUTC, double longitude)
 
     // convert longitude to seconds
     // 360degrees -> 24hours, then 1  deg -> 24/360hour->4min->240sec
-    double seconds = longitude*240;  // includes '+' and '-' cases
+    double minutes = longitude*4;  // includes '+' and '-' cases
 
-    // get local time from given arguments local = UTC - longitudeShift
-    const double secondsPerDay = 86400.0;
-    double julianDateLocal = julianDateUTC - seconds / secondsPerDay;
+    // get local time from given arguments local = UTC + longitudeShift
+    const double minutesPerDay = 1440.0;
+    double julianDateLocal = julianDateUTC + minutes / minutesPerDay;
 
     // convert from Julian Date to calendar date
     // using library found on the web
@@ -71,8 +71,14 @@ char* findDate(double julianDateUTC, double longitude)
 int main()
 {
     // zad 2
-
-    char *a = findDate(2451552.54097, 17.03);
+    //
+//    2000-01-10 T 00:01 UTC is in the night 2000-01-09 - 2451553.50069
+//    2000-01-09 T 23:59 UTC is in the night 2000-01-09 - 2451553.49931
+//    2000-01-09 T 12:01 UTC is in the night 2000-01-09 - 2451553.00069
+//    2000-01-09 T 11:59 UTC is in the night 2000-01-09 - 2451552.99931
+//    2000-01-09 T 08:59 UTC is in the night 2000-01-08 - 2451552.87431
+//    2000-01-09 T 00:59 UTC is in the night 2000-01-08 - 2451552.54097
+    char *a = findDate(2451552.99931, 17.03);
 
     printf("%s", a);
 
