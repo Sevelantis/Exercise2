@@ -3,7 +3,7 @@
 # How to run on Linux
 ```
 git clone https://github.com/Sevelantis/Exercise2
-cd Exercise/
+cd Exercise2/
 mkdir bild
 cd bild/
 cmake ..
