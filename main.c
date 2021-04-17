@@ -62,7 +62,7 @@ double dmod(double x, double y)
 
 /*
  *      @brief julianToDatetime()
- *          - gets modulo from given doubles
+ *          - converts date coded in Julian Date code to readable by human gregorian datetime struct
  *      @param JD
  *          - year, month, date, hour, minute, second coded in Julian Date code
  *      @param d
