@@ -3,8 +3,9 @@
 # How to run on Linux
 ```
 git clone https://github.com/Sevelantis/Exercise2
+cd Exercise/
 mkdir bild
-cd bild
+cd bild/
 cmake ..
 cmake --build .
 ```
